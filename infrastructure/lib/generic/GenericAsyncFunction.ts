@@ -20,7 +20,6 @@ export interface Methodprops {
     functionName: string
     handlerName: string
     environment: any
-
 }
 
 export abstract class GenericAsyncFunction extends Construct {
@@ -28,10 +27,9 @@ export abstract class GenericAsyncFunction extends Construct {
 
     protected constructor(scope: Construct, id: string, props?: cdk.StackProps){
         super(scope, id);
-
     }
 
-    protected initializeLambda(props: Methodprops): NodejsFunction{
+    protected addFunction(props: Methodprops): NodejsFunction{
         const apiId = config.account + '-' + config.env + '-' + props.functionName
 
         const lambda = new NodejsFunction(this, apiId, {

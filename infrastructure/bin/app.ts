@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { TodoAppStack } from '../stack/todo-app-stack';
-import {TodoAppStatefulStack} from "../stack/todo-app-stateful-stack";
+import { TodoAsyncAppStack } from '../stack/todo-async-app-stack';
+import {TodoAsyncAppStatefulStack} from "../stack/todo-async-app-stateful-stack";
 
 const app = new cdk.App();
 
-const statefulStack = new TodoAppStatefulStack(app, 'TodoStatefulStack')
-new TodoAppStack(app, 'TodoApiStack', {
+const statefulStack = new TodoAsyncAppStatefulStack(app, 'TodoAsyncStatefulStack')
+new TodoAsyncAppStack(app, 'TodoAsyncAppStack', {
     todoAppStatefulStack: statefulStack
 });

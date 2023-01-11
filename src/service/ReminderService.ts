@@ -7,7 +7,7 @@ interface TodoServiceProps{
     table: string
 }
 
-export class TodoService {
+export class ReminderService {
 
     private props: TodoServiceProps
     private documentClient = new DocumentClient()
