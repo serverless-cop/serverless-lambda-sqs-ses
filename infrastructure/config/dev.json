@@ -2,5 +2,7 @@
   "envName": "behnam",
   "account": "057260886102",
   "region": "us-east-1",
-  "imageBucketArn": "arn:aws:s3:::todo-photos-120acb2ea075"
+  "imageBucketArn": "arn:aws:s3:::todo-photos-120acb2ea075",
+  "sesVerifiedDomain": "email.app.orbitstellar.com",
+  "fromEmailAddress": "contact"
 }

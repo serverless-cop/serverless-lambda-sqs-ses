@@ -20,6 +20,7 @@ export interface Methodprops {
     functionName: string
     handlerName: string
     environment: any
+    externalModules: string[]
 }
 
 export abstract class GenericAsyncFunction extends Construct {
@@ -36,7 +37,10 @@ export abstract class GenericAsyncFunction extends Construct {
             entry: join(__dirname, '..', '..', '..','src', 'handler', props.handlerName),
             handler: 'handler',
             functionName: apiId,
-            environment: props.environment
+            environment: props.environment,
+            bundling: {
+                externalModules: props.externalModules
+            }
         })
         this.functions.set(apiId,lambda)
         return lambda;
